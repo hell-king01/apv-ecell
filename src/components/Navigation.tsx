@@ -1,46 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const location = useLocation();
 
   const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'vision-mission', label: 'Vision' },
-    { id: 'team', label: 'Team' },
-    { id: 'highlights', label: 'Highlights' },
-    { id: 'cta', label: 'Contact' }
+    { id: 'home', path: '/', label: 'Home' },
+    { id: 'events', path: '/events', label: 'Events' }
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = navItems.map(item => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 100;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(navItems[i].id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return location.pathname === '/';
     }
-    setIsOpen(false);
+    return location.pathname.startsWith(path);
   };
 
   return (
@@ -52,17 +27,18 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                to={item.path}
+                onClick={() => setIsOpen(false)}
                 className={`px-3 py-2 text-sm font-medium transition-colors duration-300 ${
-                  activeSection === item.id
+                  isActive(item.path)
                     ? 'text-[#00CFFF] border-b-2 border-[#00CFFF]'
                     : 'text-gray-300 hover:text-[#00CFFF]'
                 }`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </div>
 
@@ -79,17 +55,18 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden py-4 border-t border-[#00CFFF]/20">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                to={item.path}
+                onClick={() => setIsOpen(false)}
                 className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors duration-300 ${
-                  activeSection === item.id
+                  isActive(item.path)
                     ? 'text-[#00CFFF] bg-[#00CFFF]/10'
                     : 'text-gray-300 hover:text-[#00CFFF] hover:bg-[#00CFFF]/5'
                 }`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </div>
         )}
