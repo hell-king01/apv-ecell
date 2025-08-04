@@ -27,7 +27,7 @@ const Hero = () => {
       const offsetX = (time * 0.02) % gridSize;
       const offsetY = (time * 0.01) % gridSize;
 
-      ctx.strokeStyle = '#00CFFF';
+      ctx.strokeStyle = '#2F0654';
       ctx.lineWidth = 0.5;
       ctx.globalAlpha = 0.3;
 
@@ -48,7 +48,7 @@ const Hero = () => {
       }
 
       // Add some glowing nodes
-      ctx.fillStyle = '#00CFFF';
+      ctx.fillStyle = '#2F0654';
       ctx.globalAlpha = 0.6 + 0.4 * Math.sin(time * 0.003);
       
       for (let i = 0; i < 8; i++) {
@@ -90,7 +90,7 @@ const Hero = () => {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider mb-6 text-white hero-glow">
           Igniting Tomorrow's
           <br />
-          <span className="text-[#00CFFF]">Innovators</span>
+          <span className="text-[#2F0654]">Innovators</span>
         </h1>
         
         <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -117,7 +117,7 @@ const Hero = () => {
       
       <button
         onClick={scrollToNext}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-[#00CFFF] hover:text-white transition-colors duration-300 animate-bounce"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-[#2F0654] hover:text-white transition-colors duration-300 animate-bounce"
         aria-label="Scroll to next section"
       >
         <ChevronDown size={32} />

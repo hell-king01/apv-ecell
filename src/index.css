@@ -7,7 +7,7 @@
 :root {
   --primary-bg: #0D0D0D;
   --secondary-bg: #1a1a1a;
-  --neon-blue: #00CFFF;
+  --neon-blue: #2F0654;
   --text-primary: #ffffff;
   --text-secondary: #d1d5db;
   --glass-bg: rgba(255, 255, 255, 0.1);
@@ -37,7 +37,7 @@ html {
 
 /* Custom utilities */
 .hero-glow {
-  text-shadow: 0 0 20px rgba(0, 207, 255, 0.5), 0 0 40px rgba(0, 207, 255, 0.3);
+  text-shadow: 0 0 20px rgba(47, 6, 84, 0.5), 0 0 40px rgba(47, 6, 84, 0.3);
 }
 
 .glass-card {
@@ -50,20 +50,20 @@ html {
 .glass-card:hover {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(15px);
-  border-color: rgba(0, 207, 255, 0.3);
+  border-color: rgba(47, 6, 84, 0.3);
 }
 
 /* Button styles */
 .btn-primary {
-  background: linear-gradient(135deg, var(--neon-blue), #0099cc);
+  background: linear-gradient(135deg, var(--neon-blue), #1a0329);
   border: 2px solid transparent;
   color: white;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(0, 207, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(47, 6, 84, 0.3);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 8px 25px rgba(0, 207, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(47, 6, 84, 0.5);
   border-color: var(--neon-blue);
 }
 
@@ -77,20 +77,20 @@ html {
 .btn-secondary:hover {
   background: var(--neon-blue);
   color: white;
-  box-shadow: 0 8px 25px rgba(0, 207, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(47, 6, 84, 0.3);
 }
 
 .btn-cta {
-  background: linear-gradient(135deg, var(--neon-blue), #0099cc);
+  background: linear-gradient(135deg, var(--neon-blue), #1a0329);
   color: white;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
-  box-shadow: 0 4px 15px rgba(0, 207, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(47, 6, 84, 0.3);
 }
 
 .btn-cta:hover {
-  box-shadow: 0 8px 25px rgba(0, 207, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(47, 6, 84, 0.5);
 }
 
 /* Marquee animation */
@@ -122,9 +122,9 @@ html {
 /* CTA pulse animation */
 .cta-pulse {
   background: linear-gradient(45deg, 
-    rgba(0, 207, 255, 0.1), 
-    rgba(0, 207, 255, 0.1), 
-    rgba(0, 207, 255, 0.2));
+    rgba(47, 6, 84, 0.1), 
+    rgba(47, 6, 84, 0.1), 
+    rgba(47, 6, 84, 0.2));
   background-size: 200% 200%;
   animation: pulse-gradient 4s ease-in-out infinite;
 }
@@ -171,7 +171,7 @@ html {
 
 /* Swiper customization */
 .team-swiper .swiper-pagination-bullet {
-  background: rgba(0, 207, 255, 0.3);
+  background: rgba(47, 6, 84, 0.3);
   opacity: 1;
   width: 12px;
   height: 12px;
@@ -183,7 +183,7 @@ html {
 }
 
 .swiper-pagination-custom .swiper-pagination-bullet {
-  background: rgba(0, 207, 255, 0.3);
+  background: rgba(47, 6, 84, 0.3);
   opacity: 1;
   width: 12px;
   height: 12px;
@@ -257,21 +257,21 @@ input:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, var(--neon-blue), #0099cc);
+  background: linear-gradient(45deg, var(--neon-blue), #1a0329);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #0099cc, var(--neon-blue));
+  background: linear-gradient(45deg, #1a0329, var(--neon-blue));
 }
 
 /* Selection styles */
 ::selection {
-  background: rgba(0, 207, 255, 0.3);
+  background: rgba(47, 6, 84, 0.3);
   color: white;
 }
 
 ::-moz-selection {
-  background: rgba(0, 207, 255, 0.3);
+  background: rgba(47, 6, 84, 0.3);
   color: white;
 }

@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 const CTA = () => {
   return (
-    <section id="cta" className="py-16 px-4 bg-gradient-to-r from-[#00CFFF]/10 to-[#00CFFF]/20 relative overflow-hidden">
+    <section id="cta" className="py-16 px-4 bg-gradient-to-r from-[#2F0654]/10 to-[#2F0654]/20 relative overflow-hidden">
       <div className="absolute inset-0 cta-pulse"></div>
       
       <div className="max-w-6xl mx-auto text-center relative z-10">
@@ -22,9 +22,9 @@ const CTA = () => {
       </div>
       
       {/* Floating elements */}
-      <div className="absolute top-10 left-10 w-4 h-4 bg-[#00CFFF] rounded-full opacity-20 animate-float"></div>
-      <div className="absolute top-32 right-20 w-6 h-6 bg-[#00CFFF] rounded-full opacity-20 animate-float" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute bottom-20 left-1/4 w-3 h-3 bg-[#00CFFF] rounded-full opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-10 left-10 w-4 h-4 bg-[#2F0654] rounded-full opacity-20 animate-float"></div>
+      <div className="absolute top-32 right-20 w-6 h-6 bg-[#2F0654] rounded-full opacity-20 animate-float" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute bottom-20 left-1/4 w-3 h-3 bg-[#2F0654] rounded-full opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
     </section>
   );
 };

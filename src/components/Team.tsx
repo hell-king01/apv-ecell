@@ -301,6 +301,7 @@ const Team = () => {
                         <div className="absolute inset-0 w-full h-full backface-hidden">
                           <div className="glass-card p-6 rounded-xl h-full flex flex-col items-center justify-center text-center hover:translate-y-[-5px] transition-all duration-300">
                             <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-[#00CFFF]/30 group-hover:border-[#00CFFF] transition-colors duration-300">
+                            <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-[#2F0654]/30 group-hover:border-[#2F0654] transition-colors duration-300">
                               <img
                                 src={member.image}
                                 alt={`${member.name} - ${member.role}`}
@@ -309,32 +310,32 @@ const Team = () => {
                               />
                             </div>
                             <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-                            <p className="text-[#00CFFF] font-medium mb-2">{member.role}</p>
+                            <p className="text-[#2F0654] font-medium mb-2">{member.role}</p>
                             <p className="text-gray-300 text-sm">{member.tagline}</p>
                           </div>
                         </div>
                         
                         {/* Back of card */}
                         <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180">
-                          <div className="glass-card p-6 rounded-xl h-full flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#00CFFF]/10 to-[#00CFFF]/20">
+                          <div className="glass-card p-6 rounded-xl h-full flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#2F0654]/10 to-[#2F0654]/20">
                             <h3 className="text-xl font-bold text-white mb-4">{member.name}</h3>
                             <div className="flex space-x-4 mb-6">
                               <a
                                 href={member.linkedin}
-                                className="p-3 rounded-full bg-[#00CFFF]/20 hover:bg-[#00CFFF]/40 transition-colors duration-300"
+                                className="p-3 rounded-full bg-[#2F0654]/20 hover:bg-[#2F0654]/40 transition-colors duration-300"
                                 aria-label={`${member.name}'s LinkedIn profile`}
                               >
-                                <Linkedin className="w-5 h-5 text-[#00CFFF]" />
+                                <Linkedin className="w-5 h-5 text-[#2F0654]" />
                               </a>
                               <a
                                 href={member.instagram}
-                                className="p-3 rounded-full bg-[#00CFFF]/20 hover:bg-[#00CFFF]/40 transition-colors duration-300"
+                                className="p-3 rounded-full bg-[#2F0654]/20 hover:bg-[#2F0654]/40 transition-colors duration-300"
                                 aria-label={`${member.name}'s Instagram profile`}
                               >
-                                <Instagram className="w-5 h-5 text-[#00CFFF]" />
+                                <Instagram className="w-5 h-5 text-[#2F0654]" />
                               </a>
                             </div>
-                            <button className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-[#00CFFF]/20 hover:bg-[#00CFFF]/40 text-[#00CFFF] transition-colors duration-300">
+                            <button className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-[#2F0654]/20 hover:bg-[#2F0654]/40 text-[#2F0654] transition-colors duration-300">
                               <ExternalLink className="w-4 h-4" />
                               <span>View Bio</span>
                             </button>
@@ -350,13 +351,13 @@ const Team = () => {
           
           {/* Custom Navigation */}
           <div className="flex items-center justify-center mt-8 space-x-4">
-            <button className="swiper-button-prev-custom p-3 rounded-full bg-[#00CFFF]/20 hover:bg-[#00CFFF]/40 text-[#00CFFF] transition-colors duration-300">
+            <button className="swiper-button-prev-custom p-3 rounded-full bg-[#2F0654]/20 hover:bg-[#2F0654]/40 text-[#2F0654] transition-colors duration-300">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             <div className="swiper-pagination-custom flex space-x-2"></div>
-            <button className="swiper-button-next-custom p-3 rounded-full bg-[#00CFFF]/20 hover:bg-[#00CFFF]/40 text-[#00CFFF] transition-colors duration-300">
+            <button className="swiper-button-next-custom p-3 rounded-full bg-[#2F0654]/20 hover:bg-[#2F0654]/40 text-[#2F0654] transition-colors duration-300">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

@@ -38,22 +38,22 @@ const EventsPage = () => {
         {!showDetails ? (
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Pitch <span className="text-[#00CFFF]">Event</span>
+              Pitch <span className="text-[#2F0654]">Event</span>
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#00CFFF] to-[#0066FF] mx-auto mb-8"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#2F0654] to-[#1a0329] mx-auto mb-8"></div>
             
             <div className="bg-[#121212] rounded-xl p-8 border border-[#2A2A2A] text-left">
               <h2 className="text-2xl font-bold text-white mb-4">{pitchEvent.title}</h2>
               
               <div className="space-y-2 text-gray-300 mb-6">
                 <p className="flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-[#00CFFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 mr-2 text-[#2F0654]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                   {pitchEvent.date} • {pitchEvent.time}
                 </p>
                 <p className="flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-[#00CFFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 mr-2 text-[#2F0654]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -68,7 +68,7 @@ const EventsPage = () => {
                 <ul className="space-y-1 text-gray-300">
                   {pitchEvent.prizes.map((prize, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-[#00CFFF] mr-2">•</span>
+                      <span className="text-[#2F0654] mr-2">•</span>
                       <span>{prize}</span>
                     </li>
                   ))}
@@ -78,11 +78,11 @@ const EventsPage = () => {
               <div className="flex flex-wrap gap-4">
                 <button 
                   onClick={() => setShowDetails(true)}
-                  className="bg-gradient-to-r from-[#00CFFF] to-[#0066FF] text-white px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity duration-300"
+                  className="bg-gradient-to-r from-[#2F0654] to-[#1a0329] text-white px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity duration-300"
                 >
                   View Details
                 </button>
-                <button className="border border-[#00CFFF] text-[#00CFFF] px-6 py-2 rounded-full font-medium hover:bg-[#00CFFF]/10 transition-colors duration-300">
+                <button className="border border-[#2F0654] text-[#2F0654] px-6 py-2 rounded-full font-medium hover:bg-[#2F0654]/10 transition-colors duration-300">
                   Register Now
                 </button>
               </div>
@@ -94,10 +94,10 @@ const EventsPage = () => {
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 {pitchEvent.title}
               </h1>
-              <div className="w-24 h-1 bg-gradient-to-r from-[#00CFFF] to-[#0066FF] mx-auto mb-6"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#2F0654] to-[#1a0329] mx-auto mb-6"></div>
               <button 
                 onClick={() => setShowDetails(false)}
-                className="text-[#00CFFF] hover:underline flex items-center mx-auto mb-8"
+                className="text-[#2F0654] hover:underline flex items-center mx-auto mb-8"
               >
                 <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -111,16 +111,16 @@ const EventsPage = () => {
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold text-[#00CFFF] mb-3">About</h3>
+                  <h3 className="text-xl font-semibold text-[#2F0654] mb-3">About</h3>
                   <p className="text-gray-300">{pitchEvent.details}</p>
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-semibold text-[#00CFFF] mb-3">Prizes</h3>
+                  <h3 className="text-xl font-semibold text-[#2F0654] mb-3">Prizes</h3>
                   <ul className="space-y-2">
                     {pitchEvent.prizes.map((prize, index) => (
                       <li key={index} className="flex items-start">
-                        <span className="text-[#00CFFF] mr-2">•</span>
+                        <span className="text-[#2F0654] mr-2">•</span>
                         <span className="text-gray-300">{prize}</span>
                       </li>
                     ))}
@@ -128,11 +128,11 @@ const EventsPage = () => {
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-semibold text-[#00CFFF] mb-3">Guidelines</h3>
+                  <h3 className="text-xl font-semibold text-[#2F0654] mb-3">Guidelines</h3>
                   <ul className="space-y-2">
                     {pitchEvent.guidelines.map((guideline, index) => (
                       <li key={index} className="flex items-start">
-                        <span className="text-[#00CFFF] mr-2">•</span>
+                        <span className="text-[#2F0654] mr-2">•</span>
                         <span className="text-gray-300">{guideline}</span>
                       </li>
                     ))}
@@ -140,11 +140,11 @@ const EventsPage = () => {
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-semibold text-[#00CFFF] mb-3">Judging Criteria</h3>
+                  <h3 className="text-xl font-semibold text-[#2F0654] mb-3">Judging Criteria</h3>
                   <ul className="space-y-2">
                     {pitchEvent.criteria.map((criterion, index) => (
                       <li key={index} className="flex items-start">
-                        <span className="text-[#00CFFF] mr-2">•</span>
+                        <span className="text-[#2F0654] mr-2">•</span>
                         <span className="text-gray-300">{criterion}</span>
                       </li>
                     ))}
@@ -152,7 +152,7 @@ const EventsPage = () => {
                 </div>
                 
                 <div className="pt-4">
-                  <button className="w-full bg-gradient-to-r from-[#00CFFF] to-[#0066FF] text-white py-3 rounded-lg font-medium hover:opacity-90 transition-opacity duration-300">
+                  <button className="w-full bg-gradient-to-r from-[#2F0654] to-[#1a0329] text-white py-3 rounded-lg font-medium hover:opacity-90 transition-opacity duration-300">
                     Register Now
                   </button>
                 </div>

@@ -32,7 +32,7 @@ const About = () => {
           <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 relative">
               About Us
-              <div className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#00CFFF] to-[#7CFF00] transition-all duration-1000 ${isVisible ? 'w-full' : 'w-0'}`}></div>
+              <div className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#2F0654] to-[#4A0E7A] transition-all duration-1000 ${isVisible ? 'w-full' : 'w-0'}`}></div>
             </h2>
             
             <div className="space-y-4 text-gray-300 leading-relaxed">
@@ -59,8 +59,8 @@ const About = () => {
           <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
             <div className="relative overflow-hidden rounded-lg">
               <img
-                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="E-Cell team collaborating on innovative projects"
+                src="/WhatsApp Image 2025-07-31 at 09.21.43.jpeg"
+                alt="APV E-Cell team collaborating on innovative projects"
                 className="w-full h-64 md:h-80 object-cover rounded-lg transition-transform duration-500 hover:scale-105"
                 loading="lazy"
               />
