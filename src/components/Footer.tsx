@@ -1,53 +1,72 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import React from 'react';
+import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
-  const [email, setEmail] = useState('');
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle newsletter signup
-    console.log('Newsletter signup:', email);
-    setEmail('');
-  };
-
   return (
-    <footer className="bg-black text-white py-16">
+    <footer className="bg-[#0D0D1F] text-white py-20 border-t border-[#A259FF]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {/* Brand Section */}
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-4 font-['Space_Grotesk']">
+                APV <span className="text-[#A259FF]">E-CELL</span>
+              </h3>
+              <p className="text-[#CCCCCC] leading-relaxed">
+                Empowering the next generation of entrepreneurs and innovators at Agnel Polytechnic, Vashi. 
+                Building tomorrow's success stories today.
+              </p>
+            </div>
+            <div className="flex space-x-4">
+              <a 
+                href="https://www.instagram.com/apv_ecell/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-[#A259FF]/20 hover:bg-[#A259FF] rounded-xl flex items-center justify-center transition-all duration-300 group border border-[#A259FF]/30 hover:border-[#A259FF] hover:scale-110"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5 text-[#A259FF] group-hover:text-white transition-colors duration-300" />
+              </a>
+            </div>
+          </div>
+
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-[#2F0654] mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-[#A259FF] mb-6 font-['Space_Grotesk']">Quick Links</h3>
+            <ul className="space-y-4">
               <li>
                 <a 
                   href="#about" 
-                  className="text-gray-300 hover:text-[#2F0654] transition-colors duration-300"
+                  className="text-[#CCCCCC] hover:text-[#A259FF] transition-colors duration-300 flex items-center group"
                 >
+                  <span className="w-2 h-2 bg-[#A259FF] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                   About Us
                 </a>
               </li>
               <li>
                 <a 
-                  href="#vision" 
-                  className="text-gray-300 hover:text-[#2F0654] transition-colors duration-300"
+                  href="#vision-mission" 
+                  className="text-[#CCCCCC] hover:text-[#A259FF] transition-colors duration-300 flex items-center group"
                 >
+                  <span className="w-2 h-2 bg-[#A259FF] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                   Vision & Mission
                 </a>
               </li>
               <li>
                 <a 
                   href="#team" 
-                  className="text-gray-300 hover:text-[#2F0654] transition-colors duration-300"
+                  className="text-[#CCCCCC] hover:text-[#A259FF] transition-colors duration-300 flex items-center group"
                 >
+                  <span className="w-2 h-2 bg-[#A259FF] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                   Our Team
                 </a>
               </li>
               <li>
                 <a 
                   href="#highlights" 
-                  className="text-gray-300 hover:text-[#2F0654] transition-colors duration-300"
+                  className="text-[#CCCCCC] hover:text-[#A259FF] transition-colors duration-300 flex items-center group"
                 >
+                  <span className="w-2 h-2 bg-[#A259FF] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                   Achievements
                 </a>
               </li>
@@ -55,51 +74,42 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-[#2F0654] mb-4">Contact Info</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-[#2F0654]" />
-                <span className="text-gray-300">apvecell@gmail.com</span>
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-[#A259FF] mb-6 font-['Space_Grotesk']">Contact Info</h3>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-4 group">
+                <div className="w-10 h-10 rounded-xl bg-[#A259FF]/20 flex items-center justify-center border border-[#A259FF]/30 group-hover:border-[#A259FF] transition-all duration-300">
+                  <Mail className="w-4 h-4 text-[#A259FF]" />
+                </div>
+                <span className="text-[#CCCCCC] group-hover:text-white transition-colors duration-300">apvecell@gmail.com</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-[#2F0654]" />
-                <span className="text-gray-300">+91 77159 90922</span>
+              <div className="flex items-center space-x-4 group">
+                <div className="w-10 h-10 rounded-xl bg-[#A259FF]/20 flex items-center justify-center border border-[#A259FF]/30 group-hover:border-[#A259FF] transition-all duration-300">
+                  <Phone className="w-4 h-4 text-[#A259FF]" />
+                </div>
+                <span className="text-[#CCCCCC] group-hover:text-white transition-colors duration-300">+91 77159 90922</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-4 h-4 text-[#2F0654]" />
-                <span className="text-gray-300">Agnel Polytechnic, Vashi</span>
+              <div className="flex items-center space-x-4 group">
+                <div className="w-10 h-10 rounded-xl bg-[#A259FF]/20 flex items-center justify-center border border-[#A259FF]/30 group-hover:border-[#A259FF] transition-all duration-300">
+                  <MapPin className="w-4 h-4 text-[#A259FF]" />
+                </div>
+                <span className="text-[#CCCCCC] group-hover:text-white transition-colors duration-300">Agnel Polytechnic, Vashi</span>
               </div>
             </div>
-          </div>
-
-          {/* Follow Us */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-[#2F0654] mb-4">Follow Us</h3>
-            <div className="flex">
-              <a 
-                href="https://www.instagram.com/apv_ecell/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-[#2F0654] transition-colors duration-300"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
-
-          {/* Empty column for spacing */}
-          <div className="space-y-4">
-            {/* This column is intentionally left empty for better spacing */}
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center">
-          <p className="text-gray-400 text-sm">
-            © 2025 APV Entrepreneurship Cell. All rights reserved. Built for the National Entrepreneurship Challenge.
-          </p>
+        <div className="mt-16 pt-8 border-t border-[#A259FF]/20 text-center">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-[#CCCCCC] text-sm">
+              © 2025 APV Entrepreneurship Cell. All rights reserved.
+            </p>
+            <p className="text-[#CCCCCC] text-sm">
+              Built for the National Entrepreneurship Challenge
+            </p>
+          </div>
+          <div className="mt-4 w-full h-px bg-gradient-to-r from-transparent via-[#A259FF] to-transparent opacity-50"></div>
         </div>
       </div>
     </footer>

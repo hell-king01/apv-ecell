@@ -25,20 +25,21 @@ const About = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="py-20 px-4 bg-gradient-to-b from-[#0D0D0D] to-[#1a1a1a]"
+      className="py-24 px-4"
+      style={{ background: 'radial-gradient(ellipse at center, #151522 0%, #121212 100%)' }}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 relative">
-              About Us
-              <div className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#2F0654] to-[#4A0E7A] transition-all duration-1000 ${isVisible ? 'w-full' : 'w-0'}`}></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 relative font-['Space_Grotesk']">
+              About <span className="text-[#A259FF]">Us</span>
+              <div className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#A259FF] to-[#872ff7] transition-all duration-1000 ${isVisible ? 'w-full' : 'w-0'} rounded-full`}></div>
             </h2>
             
-            <div className="space-y-4 text-gray-300 leading-relaxed">
-              <p className="text-lg">
+            <div className="space-y-6 text-[#CCCCCC] leading-relaxed">
+              <p className="text-lg font-medium">
                 Founded with a vision to foster entrepreneurial excellence, our E-Cell has been the 
-                launchpad for over 200 startups and countless innovative projects that have 
+                launchpad for over <span className="text-[#A259FF] font-semibold">15+ startups</span> and countless innovative projects that have 
                 transformed industries and touched lives.
               </p>
               
@@ -53,21 +54,34 @@ const About = () => {
                 market validation - we provide the complete support system that emerging 
                 entrepreneurs need to succeed in today's competitive landscape.
               </p>
+
+              <div className="pt-6">
+                <button 
+                  onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                  className="btn-primary px-8 py-3 text-base font-semibold rounded-full transition-all duration-300"
+                >
+                  Meet Our Team
+                </button>
+              </div>
             </div>
           </div>
           
           <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-            <div className="relative overflow-hidden rounded-lg">
+            <div className="relative overflow-hidden rounded-2xl group">
               <img
                 src="/WhatsApp Image 2025-07-31 at 09.21.43.jpeg"
                 alt="APV E-Cell team collaborating on innovative projects"
-                className="w-full h-64 md:h-80 object-cover rounded-lg transition-transform duration-500 hover:scale-105"
+                className="w-full h-80 md:h-96 object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/60 to-transparent rounded-lg"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <p className="text-sm font-medium">Innovation in Action</p>
-                <p className="text-xs text-gray-300">Building tomorrow, today</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D1F]/80 via-transparent to-transparent rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#A259FF]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <div className="absolute bottom-6 left-6 text-white">
+                <p className="text-lg font-semibold font-['Space_Grotesk'] mb-1">Innovation in Action</p>
+                <p className="text-sm text-[#CCCCCC]">Building tomorrow, today</p>
+              </div>
+              <div className="absolute top-6 right-6 w-12 h-12 bg-[#A259FF]/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-[#A259FF]/30 group-hover:bg-[#A259FF]/30 transition-all duration-300">
+                <div className="w-6 h-6 bg-[#A259FF] rounded-full animate-pulse"></div>
               </div>
             </div>
           </div>

@@ -1,20 +1,28 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Trophy, Users, DollarSign, Calendar } from 'lucide-react';
 
 const Highlights = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   const achievements = [
-    { name: "IIT Bombay", type: "Partner Institution" },
-    { name: "Startup India", type: "Recognition" },
-    { name: "National Innovation Foundation", type: "Award" },
-    { name: "TechCrunch", type: "Featured Startup" },
-    { name: "Economic Times", type: "Media Coverage" },
-    { name: "NASSCOM", type: "Member Organization" },
-    { name: "Invest India", type: "Government Partner" },
-    { name: "Indian Angel Network", type: "Investor Network" },
-    { name: "Microsoft for Startups", type: "Tech Partner" },
-    { name: "AWS Activate", type: "Cloud Partner" }
+    { name: "IIT Bombay", type: "Partner Institution", icon: "🎓" },
+    { name: "Startup India", type: "Recognition", icon: "🏆" },
+    { name: "National Innovation Foundation", type: "Award", icon: "🥇" },
+    { name: "TechCrunch", type: "Featured Startup", icon: "📰" },
+    { name: "Economic Times", type: "Media Coverage", icon: "📺" },
+    { name: "NASSCOM", type: "Member Organization", icon: "🤝" },
+    { name: "Invest India", type: "Government Partner", icon: "🏛️" },
+    { name: "Indian Angel Network", type: "Investor Network", icon: "💼" },
+    { name: "Microsoft for Startups", type: "Tech Partner", icon: "💻" },
+    { name: "AWS Activate", type: "Cloud Partner", icon: "☁️" }
+  ];
+
+  const stats = [
+    { icon: Trophy, value: "15+", label: "Startups Launched", delay: "300" },
+    { icon: Calendar, value: "25+", label: "Events Organized", delay: "400" },
+    { icon: DollarSign, value: "₹10L+", label: "Funding Raised", delay: "500" },
+    { icon: Users, value: "500+", label: "Students Mentored", delay: "600" }
   ];
 
   useEffect(() => {
@@ -38,22 +46,24 @@ const Highlights = () => {
     <section
       id="highlights"
       ref={sectionRef}
-      className="py-20 px-4 bg-[#0D0D0D] overflow-hidden"
+      className="py-24 px-4 overflow-hidden"
+      style={{ background: 'radial-gradient(ellipse at center, #0D0D1F 0%, #121212 100%)' }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className={`text-3xl md:text-4xl font-bold text-white mb-4 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            Highlights & Achievements
+          <h2 className={`text-4xl md:text-5xl font-bold text-white mb-6 font-['Space_Grotesk'] transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            Highlights & <span className="text-[#A259FF]">Achievements</span>
           </h2>
-          <p className={`text-lg text-gray-300 max-w-2xl mx-auto transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div className={`w-32 h-1 bg-gradient-to-r from-[#A259FF] to-[#872ff7] mx-auto rounded-full transform transition-all duration-1000 delay-200 ${isVisible ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'}`}></div>
+          <p className={`text-lg text-[#CCCCCC] max-w-2xl mx-auto mt-6 transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             Recognized by leading institutions and featured in prestigious platforms
           </p>
         </div>
         
-        <div className="relative">
+        <div className="relative mb-20">
           {/* Gradient overlays for smooth fade effect */}
-          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#0D0D0D] to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#0D0D0D] to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#121212] to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#121212] to-transparent z-10"></div>
           
           <div className="marquee-container">
             <div className="marquee-content">
@@ -62,14 +72,14 @@ const Highlights = () => {
                   key={index}
                   className="marquee-item group"
                 >
-                  <div className="glass-card p-6 rounded-xl text-center min-w-[250px] hover:scale-105 transition-all duration-300">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#2F0654]/20 to-[#2F0654]/40 flex items-center justify-center border border-[#2F0654]/30 group-hover:border-[#2F0654] transition-colors duration-300">
-                      <div className="w-8 h-8 bg-gradient-to-br from-[#2F0654] to-[#1a0329] rounded-full"></div>
+                  <div className="glass-card p-6 rounded-2xl text-center min-w-[280px] group">
+                    <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#A259FF]/20 to-[#872ff7]/40 flex items-center justify-center border border-[#A259FF]/30 group-hover:border-[#A259FF] transition-all duration-300 text-2xl">
+                      {achievement.icon}
                     </div>
-                    <h3 className="text-white font-bold mb-2 group-hover:text-[#2F0654] transition-colors duration-300">
+                    <h3 className="text-white font-bold text-lg mb-3 group-hover:text-[#A259FF] transition-colors duration-300 font-['Space_Grotesk']">
                       {achievement.name}
                     </h3>
-                    <p className="text-gray-400 text-sm">{achievement.type}</p>
+                    <p className="text-[#CCCCCC] text-sm font-medium">{achievement.type}</p>
                   </div>
                 </div>
               ))}
@@ -77,25 +87,28 @@ const Highlights = () => {
           </div>
         </div>
         
-        <div className="mt-16 text-center">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="text-3xl md:text-4xl font-bold text-[#2F0654] mb-2">15+</div>
-              <div className="text-gray-300">Startups Launched</div>
-            </div>
-            <div className={`transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="text-3xl md:text-4xl font-bold text-[#2F0654] mb-2">25+</div>
-              <div className="text-gray-300">Events Organized</div>
-            </div>
-            <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="text-3xl md:text-4xl font-bold text-[#2F0654] mb-2">₹10L+</div>
-              <div className="text-gray-300">Funding Raised</div>
-            </div>
-            <div className={`transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="text-3xl md:text-4xl font-bold text-[#2F0654] mb-2">500+</div>
-              <div className="text-gray-300">Students Mentored</div>
-            </div>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, index) => {
+            const IconComponent = stat.icon;
+            return (
+              <div 
+                key={index}
+                className={`text-center transform transition-all duration-1000 delay-${stat.delay} ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+              >
+                <div className="glass-card p-8 rounded-2xl group hover:scale-105 transition-all duration-300">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#A259FF]/20 to-[#872ff7]/40 flex items-center justify-center border border-[#A259FF]/30 group-hover:border-[#A259FF] transition-all duration-300">
+                    <IconComponent className="w-8 h-8 text-[#A259FF] group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-[#A259FF] mb-2 font-['Space_Grotesk'] group-hover:text-white transition-colors duration-300">
+                    {stat.value}
+                  </div>
+                  <div className="text-[#CCCCCC] font-medium group-hover:text-white transition-colors duration-300">
+                    {stat.label}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

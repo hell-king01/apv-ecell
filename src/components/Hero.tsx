@@ -19,93 +19,77 @@ const Hero = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Enhanced animated wireframe grid with glow
+    // Enhanced animated wireframe grid with particles
     const drawGrid = (time: number) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       const gridSize = 60;
-      const offsetX = (time * 0.03) % gridSize;
+      const offsetX = (time * 0.02) % gridSize;
       const offsetY = (time * 0.015) % gridSize;
 
-      // Outer glow for grid lines with white stroke
+      // Grid lines with purple glow
       ctx.shadowBlur = 15;
-      ctx.shadowColor = '#2F0654';
-      ctx.strokeStyle = '#2F0654';
-      // Function to draw grid lines
-      const drawGridLines = (color: string, width: number, alpha: number) => {
-        ctx.strokeStyle = color;
-        ctx.lineWidth = width;
-        ctx.globalAlpha = alpha;
-        
-        // Vertical lines
-        for (let x = -offsetX; x < canvas.width + gridSize; x += gridSize) {
-          ctx.beginPath();
-          ctx.moveTo(x, 0);
-          ctx.lineTo(x, canvas.height);
-          ctx.stroke();
-        }
-
-        // Horizontal lines
-        for (let y = -offsetY; y < canvas.height + gridSize; y += gridSize) {
-          ctx.beginPath();
-          ctx.moveTo(0, y);
-          ctx.lineTo(canvas.width, y);
-          ctx.stroke();
-        }
-      };
-
-      // Draw white stroke first
-      drawGridLines('white', 2, 0.3);
+      ctx.shadowColor = '#A259FF';
+      ctx.strokeStyle = '#A259FF';
+      ctx.lineWidth = 1;
+      ctx.globalAlpha = 0.4;
       
-      // Then draw purple glow
-      ctx.shadowBlur = 15;
-      ctx.shadowColor = '#2F0654';
-      drawGridLines('rgba(47, 6, 84, 0.9)', 1.5, 0.6);
-      ctx.shadowBlur = 0;
+      // Vertical lines
+      for (let x = -offsetX; x < canvas.width + gridSize; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+
+      // Horizontal lines
+      for (let y = -offsetY; y < canvas.height + gridSize; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
 
       // Enhanced glowing nodes with pulsing effect
-      const pulse = 0.6 + 0.4 * Math.sin(time * 0.005);
+      const pulse = 0.6 + 0.4 * Math.sin(time * 0.003);
       
-      for (let i = 0; i < 12; i++) {
-        const x = (canvas.width * (0.1 + (i * 0.07))) + 30 * Math.sin(time * 0.0015 + i);
-        const y = (canvas.height * (0.15 + (i * 0.06))) + 25 * Math.cos(time * 0.002 + i);
-        
-        // White stroke for outer circle
-        ctx.shadowBlur = 0;
-        ctx.strokeStyle = 'white';
-        ctx.lineWidth = 2;
-        ctx.globalAlpha = 0.8 * pulse;
-        
-        // Draw white stroke
-        ctx.beginPath();
-        ctx.arc(x, y, 10 * pulse, 0, Math.PI * 2);
-        ctx.stroke();
+      for (let i = 0; i < 15; i++) {
+        const x = (canvas.width * (0.1 + (i * 0.06))) + 40 * Math.sin(time * 0.001 + i);
+        const y = (canvas.height * (0.15 + (i * 0.05))) + 30 * Math.cos(time * 0.0015 + i);
         
         // Outer glow
-        ctx.shadowBlur = 20 * pulse;
-        ctx.shadowColor = '#2F0654';
-        ctx.fillStyle = 'rgba(47, 6, 84, 0.9)';
+        ctx.shadowBlur = 25 * pulse;
+        ctx.shadowColor = '#A259FF';
+        ctx.fillStyle = `rgba(162, 89, 255, ${0.8 * pulse})`;
+        ctx.globalAlpha = 0.9 * pulse;
         
         // Draw outer circle
         ctx.beginPath();
-        ctx.arc(x, y, 8 * pulse, 0, Math.PI * 2);
+        ctx.arc(x, y, 12 * pulse, 0, Math.PI * 2);
         ctx.fill();
         
-        // Inner glow with white stroke
-        ctx.shadowBlur = 30 * pulse;
-        ctx.fillStyle = '#2F0654';
-        ctx.globalAlpha = 0.9 * pulse;
+        // Inner bright core
+        ctx.shadowBlur = 15 * pulse;
+        ctx.fillStyle = `rgba(255, 255, 255, ${0.9 * pulse})`;
+        ctx.globalAlpha = 0.8 * pulse;
         
-        // Draw inner white stroke
-        ctx.strokeStyle = 'white';
-        ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.arc(x, y, 5 * pulse, 0, Math.PI * 2);
-        ctx.stroke();
+        ctx.arc(x, y, 4 * pulse, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Floating particles
+      for (let i = 0; i < 8; i++) {
+        const x = (canvas.width * (0.2 + (i * 0.1))) + 60 * Math.sin(time * 0.0008 + i * 2);
+        const y = (canvas.height * (0.3 + (i * 0.08))) + 40 * Math.cos(time * 0.001 + i * 1.5);
         
-        // Draw inner circle
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#872ff7';
+        ctx.fillStyle = `rgba(135, 47, 247, ${0.6 + 0.4 * Math.sin(time * 0.002 + i)})`;
+        ctx.globalAlpha = 0.7;
+        
         ctx.beginPath();
-        ctx.arc(x, y, 3 * pulse, 0, Math.PI * 2);
+        ctx.arc(x, y, 3, 0, Math.PI * 2);
         ctx.fill();
       }
     };
@@ -128,59 +112,74 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0D0D0D]">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden" 
+             style={{ background: 'radial-gradient(ellipse at center, #151522 0%, #0D0D1F 100%)' }}>
+      
+      {/* Animated Grid Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-[#0D0D0D] via-[#0A0A0A] to-[#0D0D0D]"></div>
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full opacity-50"
+          className="absolute inset-0 w-full h-full opacity-60"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(13,13,13,0.9)_80%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(13,13,31,0.8)_80%)]"></div>
+      </div>
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="floating-particle"></div>
+        <div className="floating-particle"></div>
+        <div className="floating-particle"></div>
+        <div className="floating-particle"></div>
+        <div className="floating-particle"></div>
       </div>
       
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider mb-6 text-white relative">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 relative z-10">
-            Igniting Tomorrow's
-            <br />
-            <span className="text-[#2F0654] drop-shadow-[0_0_8px_rgba(47,6,132,0.8)]">Innovators</span>
-          </span>
-          <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 opacity-20 blur-2xl">
-            Igniting Tomorrow's
-            <br />
-            Innovators
-          </span>
-        </h1>
+        <div className="fade-in-up">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider mb-8 text-white relative font-['Space_Grotesk']">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#CCCCCC] to-white relative z-10 hero-glow">
+              Igniting Tomorrow's
+              <br />
+              <span className="text-[#A259FF] drop-shadow-[0_0_20px_rgba(162,89,255,0.8)]">Innovators</span>
+            </span>
+          </h1>
+        </div>
         
-        <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Empowering visionaries to transform ideas into reality.
-          <br />
-          Building the next generation of entrepreneurs and change-makers.
-        </p>
+        <div className="fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg md:text-xl text-[#CCCCCC] mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
+            Empowering visionaries to transform ideas into reality.
+            <br />
+            Building the next generation of entrepreneurs and change-makers at 
+            <span className="text-[#A259FF] font-semibold"> Agnel Polytechnic, Vashi</span>.
+          </p>
+        </div>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button 
-            onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-            className="btn-primary px-8 py-3 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105"
-          >
-            Join the E-Cell
-          </button>
+        <div className="fade-in-up flex flex-col sm:flex-row gap-6 justify-center items-center" style={{ animationDelay: '0.4s' }}>
           <button 
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-            className="btn-secondary px-8 py-3 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+            className="btn-primary px-10 py-4 text-lg font-semibold rounded-full transition-all duration-300"
           >
-            Our Journey
+            Discover Our Journey
+          </button>
+          <button 
+            onClick={() => document.getElementById('vision-mission')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+            className="btn-secondary px-10 py-4 text-lg font-semibold rounded-full transition-all duration-300"
+          >
+            Our Vision
           </button>
         </div>
       </div>
       
-      <button
-        onClick={scrollToNext}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-[#2F0654] hover:text-white transition-colors duration-300 animate-bounce"
-        aria-label="Scroll to next section"
-      >
-        <ChevronDown size={32} />
-      </button>
+      {/* Scroll Indicator */}
+      <div className="scroll-indicator">
+        <span className="text-sm font-medium mb-2 font-['Space_Grotesk']">Explore More</span>
+        <button
+          onClick={scrollToNext}
+          className="text-[#A259FF] hover:text-white transition-colors duration-300"
+          aria-label="Scroll to next section"
+        >
+          <ChevronDown size={28} />
+        </button>
+      </div>
     </section>
   );
 };
