@@ -9,15 +9,15 @@ const EventsPage: React.FC<EventsPageProps> = ({ initialTab }) => {
   const [showDetails, setShowDetails] = useState(false);
   
   const pitchEvent = {
-    title: 'Startup Pitch Competition',
-    date: 'March 15, 2025',
+    title: "Alpha's Pitch Competition",
+    date: 'August 18, 2025',
     time: '10:00 AM - 4:00 PM',
-    location: 'Main Auditorium, Agnel Polytechnic Vashi',
+    location: 'Seminar Hall, Agnel Polytechnic Vashi',
     description: 'Pitch your startup idea to a panel of investors and win exciting prizes. This is your chance to showcase your startup and receive valuable feedback from industry experts.',
     prizes: [
-      '1st Prize: ₹50,000 + Incubation Support',
-      '2nd Prize: ₹25,000 + Mentorship Program',
-      '3rd Prize: ₹10,000 + Co-working Space Access'
+      "1st Prize: Trophy + Eureka's Incubation Support",
+      "2nd Prize: Trophy + Eureka's Incubation Support",
+      "3rd Prize: Trophy + Eureka's Incubation SUpport"
     ],
     details: 'The Annual Startup Pitch Competition is our flagship event where aspiring entrepreneurs get the opportunity to present their innovative ideas to a panel of industry experts and potential investors. This event is open to all students and recent graduates with a passion for entrepreneurship and innovation. Participants will have 5 minutes to pitch their startup idea, followed by a 3-minute Q&A session with our panel of judges.',
     guidelines: [
@@ -56,7 +56,7 @@ const EventsPage: React.FC<EventsPageProps> = ({ initialTab }) => {
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 relative font-['Space_Grotesk']">
               <span className="relative z-10">
-                Pitch <span className="text-[#A259FF] drop-shadow-[0_0_20px_rgba(162,89,255,0.8)]">Event</span>
+                Pitch <span className="text-[#A259FF] drop-shadow-[0_0_20px_rgba(162,89,255,0.8)]">Alpha</span>
               </span>
             </h1>
             <div className="relative w-32 h-1.5 mx-auto mb-12">

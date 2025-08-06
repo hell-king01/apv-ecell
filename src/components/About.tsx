@@ -67,18 +67,18 @@ const About = () => {
           </div>
           
           <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-            <div className="relative overflow-hidden rounded-2xl group">
+            <div className="relative overflow-hidden rounded-2xl group border-2 border-[#A259FF]/30 hover:border-[#A259FF]/50 transition-all duration-300">
               <img
-                src="/WhatsApp Image 2025-07-31 at 09.21.43.jpeg"
-                alt="APV E-Cell team collaborating on innovative projects"
-                className="w-full h-80 md:h-96 object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105"
+                src="/group photo.png"
+                alt="APV E-Cell team group photo"
+                className="w-full h-auto object-cover rounded-xl transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D1F]/80 via-transparent to-transparent rounded-2xl"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-[#A259FF]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D1F]/90 via-transparent to-transparent rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#A259FF]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
               <div className="absolute bottom-6 left-6 text-white">
-                <p className="text-lg font-semibold font-['Space_Grotesk'] mb-1">Innovation in Action</p>
-                <p className="text-sm text-[#CCCCCC]">Building tomorrow, today</p>
+                <p className="text-lg font-semibold font-['Space_Grotesk'] mb-1">APV E-Cell Family</p>
+                <p className="text-sm text-[#CCCCCC]">Together we innovate</p>
               </div>
               <div className="absolute top-6 right-6 w-12 h-12 bg-[#A259FF]/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-[#A259FF]/30 group-hover:bg-[#A259FF]/30 transition-all duration-300">
                 <div className="w-6 h-6 bg-[#A259FF] rounded-full animate-pulse"></div>

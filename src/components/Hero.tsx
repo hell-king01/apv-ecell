@@ -112,17 +112,30 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden" 
-             style={{ background: 'radial-gradient(ellipse at center, #151522 0%, #0D0D1F 100%)' }}>
-      
-      {/* Animated Grid Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full opacity-60"
-        />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(13,13,31,0.8)_80%)]"></div>
-      </div>
+    <section id="hero" className="relative min-h-screen bg-[#0D0D1F] overflow-hidden">
+  {/* Background Grid Canvas */}
+  <canvas ref={canvasRef} className="absolute inset-0 z-0" />
+
+  {/* Radial Overlay */}
+  <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(13,13,31,0.8)_80%)]" />
+
+  {/* Content - PERFECTLY CENTERED */}
+  <div className="relative z-20 flex flex-col items-center justify-center text-center gap-8 px-4 h-full min-h-screen">
+    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#A259FF] font-['Space_Grotesk']">
+      APV E-CELL
+    </h1>
+    <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white font-['Space_Grotesk'] leading-tight">
+      Creating Change Makers
+    </h2>
+    <button 
+      onClick={() => window.location.href = '/events'}
+      className="btn-primary px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105"
+    >
+      Find Events
+    </button>
+    <p className="text-sm text-[#A259FF] mt-4">Explore More ↓</p>
+  </div>
+
 
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

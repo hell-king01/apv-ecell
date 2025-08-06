@@ -4,7 +4,7 @@ const EventsPage = () => {
   const [showDetails, setShowDetails] = useState(false);
   
   const pitchEvent = {
-    title: 'Startup Pitch Competition',
+    title: 'Pitch Alpha',
     date: 'August 25, 2023',
     time: '10:00 AM - 4:00 PM',
     location: 'Main Auditorium, E-Cell Building',
@@ -38,7 +38,7 @@ const EventsPage = () => {
         {!showDetails ? (
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Pitch <span className="text-[#00CFFF]">Event</span>
+              Pitch <span className="text-[#00CFFF]">Alpha</span>
             </h1>
             <div className="w-24 h-1 bg-gradient-to-r from-[#00CFFF] to-[#0066FF] mx-auto mb-8"></div>
             

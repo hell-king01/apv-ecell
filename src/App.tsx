@@ -5,9 +5,10 @@ import About from './components/About';
 import VisionMission from './components/VisionMission';
 import EventsPage from './pages/EventsPage';
 import Team from './components/Team';
-import Highlights from './components/Highlights';
-import CTA from './components/CTA';
+// import Highlights from './components/Highlights';
+// import CTA from './components/CTA';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function Home() {
   return (
@@ -16,8 +17,8 @@ function Home() {
       <About />
       <VisionMission />
       <Team />
-      <Highlights />
-      <CTA />
+      {/* <Highlights /> */}
+      {/* <CTA /> */}
     </>
   );
 }
@@ -25,7 +26,7 @@ function Home() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#0D0D0D] text-white overflow-x-hidden">
+      <div className="min-h-screen bg-[#0D0D0D] text-white overflow-x-hidden relative">
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -33,6 +34,7 @@ function App() {
           <Route path="/events/pitch" element={<EventsPage initialTab="pitch" />} />
         </Routes>
         <Footer />
+        <ScrollToTop />
       </div>
     </Router>
   );

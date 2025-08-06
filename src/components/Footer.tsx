@@ -1,15 +1,15 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
+import { Mail, MapPin, Instagram, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#0D0D1F] text-white py-20 border-t border-[#A259FF]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Brand Section */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4 font-['Space_Grotesk']">
+              <h3 className="text-2xl font-bold mb-4 font-['Space_Grotesk']">
                 APV <span className="text-[#A259FF]">E-CELL</span>
               </h3>
               <p className="text-[#CCCCCC] leading-relaxed">
@@ -27,74 +27,57 @@ const Footer: React.FC = () => {
               >
                 <Instagram className="w-5 h-5 text-[#A259FF] group-hover:text-white transition-colors duration-300" />
               </a>
+              <a 
+                href="https://www.linkedin.com/company/agnel-polytechnic-vashi-e-cell/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-[#A259FF]/20 hover:bg-[#A259FF] rounded-xl flex items-center justify-center transition-all duration-300 group border border-[#A259FF]/30 hover:border-[#A259FF] hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5 text-[#A259FF] group-hover:text-white transition-colors duration-300" />
+              </a>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Contact & Advisors */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-[#A259FF] mb-6 font-['Space_Grotesk']">Quick Links</h3>
-            <ul className="space-y-4">
-              <li>
-                <a 
-                  href="#about" 
-                  className="text-[#CCCCCC] hover:text-[#A259FF] transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[#A259FF] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#vision-mission" 
-                  className="text-[#CCCCCC] hover:text-[#A259FF] transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[#A259FF] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                  Vision & Mission
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#team" 
-                  className="text-[#CCCCCC] hover:text-[#A259FF] transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[#A259FF] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                  Our Team
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#highlights" 
-                  className="text-[#CCCCCC] hover:text-[#A259FF] transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[#A259FF] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                  Achievements
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-[#A259FF] mb-6 font-['Space_Grotesk']">Contact Info</h3>
+            <h3 className="text-lg font-semibold text-[#A259FF] mb-6 font-['Space_Grotesk']">Contact Us</h3>
             <div className="space-y-4">
-              <div className="flex items-center space-x-4 group">
-                <div className="w-10 h-10 rounded-xl bg-[#A259FF]/20 flex items-center justify-center border border-[#A259FF]/30 group-hover:border-[#A259FF] transition-all duration-300">
+              <div className="flex items-center space-x-4">
+                <div className="w-10 h-10 rounded-xl bg-[#A259FF]/20 flex items-center justify-center border border-[#A259FF]/30">
                   <Mail className="w-4 h-4 text-[#A259FF]" />
                 </div>
-                <span className="text-[#CCCCCC] group-hover:text-white transition-colors duration-300">apvecell@gmail.com</span>
+                <span className="text-[#CCCCCC]">apvecell25@gmail.com</span>
               </div>
-              <div className="flex items-center space-x-4 group">
-                <div className="w-10 h-10 rounded-xl bg-[#A259FF]/20 flex items-center justify-center border border-[#A259FF]/30 group-hover:border-[#A259FF] transition-all duration-300">
-                  <Phone className="w-4 h-4 text-[#A259FF]" />
-                </div>
-                <span className="text-[#CCCCCC] group-hover:text-white transition-colors duration-300">+91 77159 90922</span>
-              </div>
-              <div className="flex items-center space-x-4 group">
-                <div className="w-10 h-10 rounded-xl bg-[#A259FF]/20 flex items-center justify-center border border-[#A259FF]/30 group-hover:border-[#A259FF] transition-all duration-300">
+              <div className="flex items-center space-x-4">
+                <div className="w-10 h-10 rounded-xl bg-[#A259FF]/20 flex items-center justify-center border border-[#A259FF]/30">
                   <MapPin className="w-4 h-4 text-[#A259FF]" />
                 </div>
-                <span className="text-[#CCCCCC] group-hover:text-white transition-colors duration-300">Agnel Polytechnic, Vashi</span>
+                <span className="text-[#CCCCCC]">Agnel Polytechnic, Vashi</span>
               </div>
+            </div>
+
+            {/* Advisors */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[
+                { name: 'Pranav Bhadane', role: 'Faculty Advisor', phone: '+91 78210 96591', linkedin: 'https://www.linkedin.com/in/pranavkumar-bhadane-417368210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
+                { name: 'Soham Dhanokar', role: 'President', phone: '+91 93218 95202', linkedin: 'https://www.linkedin.com/in/soham-dhanokar-13807a355?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' }
+              ].map((person, idx) => (
+                <div key={idx} className="space-y-1">
+                  <p className="text-white font-medium">{person.name}</p>
+                  <p className="text-[#CCCCCC] text-sm">{person.role}</p>
+                  <p className="text-[#CCCCCC] text-sm">{person.phone}</p>
+                  <a 
+                    href={person.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center text-[#A259FF] hover:underline space-x-1"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -109,7 +92,7 @@ const Footer: React.FC = () => {
               Built for the National Entrepreneurship Challenge
             </p>
           </div>
-          <div className="mt-4 w-full h-px bg-gradient-to-r from-transparent via-[#A259FF] to-transparent opacity-50"></div>
+          <div className="mt-4 w-full h-px bg-gradient-to-r from-transparent via-[#A259FF] to-transparent opacity-50" />
         </div>
       </div>
     </footer>

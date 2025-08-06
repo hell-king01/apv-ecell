@@ -2,7 +2,7 @@ import React from 'react';
 
 const Events = () => {
   return (
-    <section id="events" className="py-20 bg-[#0D0D0D] relative overflow-hidden">
+    <section id="events" className="py-20 bg-[#0D0D0D] relative overflow-hidden mt-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -33,7 +33,7 @@ const PitchEvent = () => {
       </p>
       <div className="mt-8">
         <button className="bg-gradient-to-r from-[#00CFFF] to-[#0066FF] text-white px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity duration-300">
-          Learn More
+          View Details
         </button>
       </div>
     </div>

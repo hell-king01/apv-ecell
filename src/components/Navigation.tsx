@@ -9,7 +9,7 @@ const Navigation = () => {
 
   const navItems = [
     { id: 'home', path: '/', label: 'Home' },
-    { id: 'events', path: '/events', label: 'Find Events', icon: Calendar }
+    { id: 'events', path: '/events', label: 'Events', icon: Calendar }
   ];
 
   useEffect(() => {
@@ -36,15 +36,27 @@ const Navigation = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? 'h-14' : 'h-16'
+          isScrolled ? 'h-24' : 'h-28'
         }`}>
           <Link 
             to="/" 
-            className="relative text-white text-xl font-bold group"
+            className="relative flex items-center gap-4 text-white text-xl font-bold group"
           >
-            <span className="relative z-10 font-['Space_Grotesk'] tracking-wide">
-              APV <span className="text-[#A259FF]">E-CELL</span>
-            </span>
+            <div className="flex items-center gap-3">
+              <img 
+                src="/agenl.png" 
+                alt="Agnel Logo" 
+                className="w-12 h-12 object-contain"
+              />
+              <img 
+                src="/Logoo.png" 
+                alt="E-Cell Logo" 
+                className="w-12 h-12 object-contain"
+              />
+              <span className="relative z-10 font-['Space_Grotesk'] tracking-wide">
+                APV <span className="text-[#A259FF]">E-CELL</span>
+              </span>
+            </div>
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#A259FF] to-[#872ff7] group-hover:w-full transition-all duration-300 ease-out"></span>
             <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#A259FF] opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-300">
               APV E-CELL
